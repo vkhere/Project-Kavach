@@ -52,5 +52,5 @@ To spin up the web vulnerability testing environment:
    docker-compose up -d
    ```
 3. Access the services:
-   - DVWA: `http://localhost:8080` (Database setup required on first login: admin/password)
+   - DVWA: `http://localhost:8080` (Database setup required on first login. Username: admin | Password: password)
    - Juice Shop: `http://localhost:3000`
