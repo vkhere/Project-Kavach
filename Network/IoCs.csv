@@ -1,0 +1,10 @@
+indicator,type,context,confidence,source
+10.5.26.132,client IP,workstation,high,2021-05-26 Trickbot / Cobalt Strike
+10.5.26.4,dc IP,domain controller,high,2021-05-26 Trickbot / Cobalt Strike
+37.228.70.134,c2 IP,beaconing endpoint,high,2021-05-26 Cobalt Strike
+36.95.27.243,c2 IP,exfil endpoint,high,2021-05-26 Trickbot
+103.102.220.50,c2 IP,exfil endpoint,high,2021-05-26 Trickbot
+5.199.162.3,c2 IP,bulk exfil endpoint,high,2021-05-26 Trickbot
+api.ipify.org,domain,external IP lookup,high,2021-05-26 Trickbot
+ipinfo.io,domain,external IP lookup,high,2021-05-26 Trickbot
+victorypunk.com,domain,internal AD domain name,high,2021-05-26 Trickbot
