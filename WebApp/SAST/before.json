@@ -1,0 +1,59 @@
+{
+  "results": [
+    {
+      "id": "php.lang.security.mysqli-concat",
+      "path": "webapp/vulnerabilities/sqli/source/low.php",
+      "start": { "line": 7, "col": 5 },
+      "end": { "line": 7, "col": 120 },
+      "extra": {
+        "message": "SQL query built via string concatenation contains unescaped user variable $id. Risk of SQL Injection.",
+        "severity": "ERROR",
+        "lines": "$query  = \"SELECT first_name, last_name FROM users WHERE user_id = '$id';\";"
+      }
+    },
+    {
+      "id": "php.lang.security.xss-injection",
+      "path": "webapp/vulnerabilities/xss_s/index.php",
+      "start": { "line": 84, "col": 9 },
+      "end": { "line": 84, "col": 102 },
+      "extra": {
+        "message": "User-supplied input variables $name and $message rendered to HTML output without htmlspecialchars. Stored XSS vulnerability.",
+        "severity": "ERROR",
+        "lines": "$html .= \"<div id=\\\"guestbook_comments\\\">Name: {$name}<br />Message: {$message}</div>\";"
+      }
+    },
+    {
+      "id": "javascript.express.security.audit.jwt-idor",
+      "path": "webapp/routes/address.js",
+      "start": { "line": 15, "col": 5 },
+      "end": { "line": 15, "col": 35 },
+      "extra": {
+        "message": "Resource query utilizes user input parameter without matching owner ID from authentication token. Direct Object Reference bypass possible.",
+        "severity": "ERROR",
+        "lines": "Address.findByPk(addressId)"
+      }
+    },
+    {
+      "id": "javascript.express.security.audit.missing-rate-limiting",
+      "path": "webapp/routes/login.js",
+      "start": { "line": 22, "col": 5 },
+      "end": { "line": 22, "col": 60 },
+      "extra": {
+        "message": "Authentication router lacks rate-limiting middleware, allowing unrestricted password brute-forcing.",
+        "severity": "WARNING",
+        "lines": "router.post('/login', (req, res) => { ... })"
+      }
+    },
+    {
+      "id": "javascript.express.security.audit.directory-listing",
+      "path": "webapp/routes/ftp.js",
+      "start": { "line": 6, "col": 5 },
+      "end": { "line": 8, "col": 20 },
+      "extra": {
+        "message": "Middleware serves files from directory path without disabling directory index rendering. Potential data exposure.",
+        "severity": "WARNING",
+        "lines": "return serveStatic(ftpDir);"
+      }
+    }
+  ]
+}
