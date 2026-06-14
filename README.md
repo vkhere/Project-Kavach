@@ -1,8 +1,6 @@
 # Project KAVACH — Two-Surface Security Assessment
 
-## IIT Roorkee × Futurense Technologies · Confidential Engagement
-
-Group Members: Megha Sharma, Kedar Pavaskar, Vinay Kumar
+IIT Roorkee × Futurense Technologies · Confidential Engagement
 
 ---
 
@@ -20,17 +18,17 @@ Following the repository guidelines, the project is structured as follows:
   - [`Hypothesis.md`](01%20Network/Hypothesis.md): Hypothesis deep dive for the `2021-05-26` capture (Cobalt Strike C2, exfiltration, lateral movement).
   - [`IoCs.csv`](01%20Network/IoCs.csv): Structured machine-readable file containing verified IPs, domains, and hash IOCs.
   - [`Network Forensics & Architecture Report.md`](01%20Network/Network%20Forensics%20&%20Architecture%20Report.md): Network findings summary and proposed microsegmented network architecture.
-- **[`02 Web App/`](02%20Web%20App/) (Workstream B: Web Application Assessment)**
-  - [`Environment/Docker-compose.yml`](02%20Web%20App/Environment/Docker-compose.yml): Reproducible test environment configurations for DVWA and OWASP Juice Shop.
-  - [`Findings/`](02%20Web%20App/Findings/): Subdirectories for each identified vulnerability:
-    - [`A03 SQL Injection Findings.md`](02%20Web%20App/Findings/A03%20Injection/A03%20SQL%20Injection%20Findings.md): SQL Injection login bypass.
-    - [`A03 XSS Findings.md`](02%20Web%20App/Findings/A03%20Injection/A03%20XSS%20Findings.md): Stored XSS cookie stealing.
-    - [`A01 IDOR Findings.md`](02%20Web%20App/Findings/A01%20In-Direct%20Object%20Reference/A01%20IDOR%20Findings.md): Insecure Direct Object Reference (IDOR) on client address book.
-    - [`A07 Identification and Authentication Failures Findings.md`](02%20Web%20App/Findings/A07%20Identification%20and%20Authentication%20Failures/A07%20Identification%20and%20Authentication%20Failures%20Findings.md): Weak auth brute force / no lockout.
-    - [`A04 Insecure Design Findings.md`](02%20Web%20App/Findings/A04%20-%20Insecure%20Design/A04%20Insecure%20Design%20Findings.md): Exposed Static Directory listing.
-    - [`A02 Cryptographic Failures Findings.md`](02%20Web%20App/Findings/A02%20Cryptographic%20Failures/A02%20Cryptographic%20Failures%20Findings.md): Plaintext credentials transmission over HTTP.
-  - [`SAST/`](02%20Web%20App/SAST/): Before and after SAST report diffs (`before.json` / `after.json`).
-  - [`Web Application Security Assessment Report.md`](02%20Web%20App/Web%20Application%20Security%20Assessment%20Report.md): Final summary of the web app assessment.
+- **[`02 WebApp/`](02%20WebApp/) (Workstream B: Web Application Assessment)**
+  - [`Environment/Docker-compose.yml`](02%20WebApp/Environment/Docker-compose.yml): Reproducible test environment configurations for DVWA and OWASP Juice Shop.
+  - [`Findings/`](02%20WebApp/Findings/): Subdirectories for each identified vulnerability:
+    - [`A03 SQL Injection Findings.md`](02%20WebApp/Findings/A03%20Injection/A03%20SQL%20Injection%20Findings.md): SQL Injection login bypass.
+    - [`A03 XSS Findings.md`](02%20WebApp/Findings/A03%20Injection/A03%20XSS%20Findings.md): Stored XSS cookie stealing.
+    - [`A01 IDOR Findings.md`](02%20WebApp/Findings/A01%20In-Direct%20Object%20Reference/A01%20IDOR%20Findings.md): Insecure Direct Object Reference (IDOR) on client address book.
+    - [`A07 Identification and Authentication Failures Findings.md`](02%20WebApp/Findings/A07%20Identification%20and%20Authentication%20Failures/A07%20Identification%20and%20Authentication%20Failures%20Findings.md): Weak auth brute force / no lockout.
+    - [`A04 Insecure Design Findings.md`](02%20WebApp/Findings/A04%20-%20Insecure%20Design/A04%20Insecure%20Design%20Findings.md): Exposed Static Directory listing.
+    - [`A02 Cryptographic Failures Findings.md`](02%20WebApp/Findings/A02%20Cryptographic%20Failures/A02%20Cryptographic%20Failures%20Findings.md): Plaintext credentials transmission over HTTP.
+  - [`SAST/`](02%20WebApp/SAST/): Before and after SAST report diffs (`before.json` / `after.json`).
+  - [`Web Application Security Assessment Report.md`](02%20WebApp/Web%20Application%20Security%20Assessment%20Report.md): Final summary of the web app assessment.
 - **[`03 Synthesis/`](03%20Synthesis/) (Workstream C: Joint Threat Model & Defense-in-Depth)**
   - [`Joint STRIDE Threat Model.md`](03%20Synthesis/Joint%20STRIDE%20Threat%20Model.md): Joint STRIDE threat model showing cross-surface pivots.
   - [`Defense in Depth.md`](03%20Synthesis/Defense%20in%20Depth.md): Layered controls proposal mapped to findings.
@@ -52,7 +50,7 @@ To spin up the web vulnerability testing environment:
 1. Ensure Docker Desktop is installed.
 2. Run:
    ```bash
-   cd "02 Web App/Environment"
+    cd "02 WebApp/Environment"
    docker-compose up -d
    ```
 3. Access the services:
