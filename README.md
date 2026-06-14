@@ -41,7 +41,7 @@ Following the repository guidelines, the project is structured as follows:
 ## 3. Setup and Reproducibility
 
 ### A. Network Forensics
-All network analyses were conducted utilizing the public capture `2021-05-26-Trickbot-infection-with-Cobalt-Strike.pcap`. All analysis commands in the hypotheses document are fully reproducible via standard `tshark` on the command line.
+All network analyses were conducted utilizing the public capture `2021-05-26-Trickbot-infection-with-Cobalt-Strike.pcap`. All analysis commands in the hypothesis document are fully reproducible via standard `tshark` on the command line.
 
 ### B. Web Environment
 To spin up the web vulnerability testing environment:
