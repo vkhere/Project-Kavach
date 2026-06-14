@@ -15,7 +15,7 @@ This log tracks interactions with large language models during the Project KAVAC
 
 ## Prompt 2: Cobalt Strike Beaconing Analysis
 - **Prompt**: *"What is the default sleep jitter configuration for Cobalt Strike and how does it look mathematically in packet timestamp gaps?"*
-- **Target LLM**: Gemini 1.5 Pro
+- **Target LLM**: Claude Sonnet 4.6
 - **Response**: Explained that the sleep timer represents the mean time gap and jitter (e.g. 20% jitter on a 200s sleep means random gaps between 160s and 240s).
 - **Result & Adjustments**: Helped verify that the gaps seen in the 2021 PCAP (ranging strictly between 201s and 207s) represents a low-jitter configuration, proving automated C2.
 - **Location in Deliverables**: [`network/hypotheses.md`](../network/hypotheses.md)
@@ -24,7 +24,7 @@ This log tracks interactions with large language models during the Project KAVAC
 
 ## Prompt 3: PHP PDO SQLi Remediation
 - **Prompt**: *"How do I modify a classic PHP query `mysqli_query` that concatenates ID parameters to use safe prepared statements with PDO?"*
-- **Target LLM**: Gemini 1.5 Pro
+- **Target LLM**: Chat GPT-5.4
 - **Response**: Provided example using `$stmt = $pdo->prepare(...)` and `$stmt->execute(...)`.
 - **Result & Adjustments**: Handled the translation of variables exactly to match the DVWA low-security source code structure.
 - **Location in Deliverables**: [`webapp/findings/F-01-sqli/finding.md`](../webapp/findings/F-01-sqli/finding.md)
@@ -33,7 +33,7 @@ This log tracks interactions with large language models during the Project KAVAC
 
 ## Prompt 4: Express.js Routing IDOR Prevention
 - **Prompt**: *"In an Express app using Sequelize ORM, how do I prevent IDOR on a path like `/api/Address/:id`?"*
-- **Target LLM**: Gemini 1.5 Pro
+- **Target LLM**: GPT-OSS 120B
 - **Response**: Suggested verifying that `address.UserId === req.user.id` after fetching the record.
 - **Result & Adjustments**: Incorporated the JWT token user property injection matching the standard OWASP Juice Shop router context.
 - **Location in Deliverables**: [`webapp/findings/F-03-idor/finding.md`](../webapp/findings/F-03-idor/finding.md)
@@ -42,7 +42,7 @@ This log tracks interactions with large language models during the Project KAVAC
 
 ## Prompt 5: Nginx Rate Limiting Syntax
 - **Prompt**: *"Write the Nginx config directives to limit requests to a specific path to 5 requests per minute with a burst allowance of 3."*
-- **Target LLM**: Gemini 1.5 Pro
+- **Target LLM**: Chat GPT-5.4
 - **Response**: Provided the `limit_req_zone` and `limit_req` directive syntax.
 - **Result & Adjustments**: Integrated the settings cleanly into the reverse-proxy virtual server block for DVWA.
 - **Location in Deliverables**: [`webapp/findings/F-04-auth-weakness/finding.md`](../webapp/findings/F-04-auth-weakness/finding.md)
@@ -51,7 +51,7 @@ This log tracks interactions with large language models during the Project KAVAC
 
 ## Prompt 6: Stored XSS Mitigation in PHP
 - **Prompt**: *"What is the correct PHP function to prevent stored HTML injection in guestbook posts? htmlspecialchars or htmlentities?"*
-- **Target LLM**: Gemini 1.5 Pro
+- **Target LLM**: Chat GPT-5.4
 - **Response**: Recommended `htmlspecialchars($string, ENT_QUOTES, 'UTF-8')` as it handles quotes and encoding type safely.
 - **Result & Adjustments**: Applied the suggestion to the DVWA guestbook rendering loop.
 - **Location in Deliverables**: [`webapp/findings/F-02-xss-stored/finding.md`](../webapp/findings/F-02-xss-stored/finding.md)
