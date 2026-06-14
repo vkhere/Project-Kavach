@@ -1,1 +1,156 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="20">Placeholder</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    
+    <!-- Red Glow for Blocked Flow -->
+    <filter id="glow-red" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#EF4444" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Green Glow for Allowed Flow -->
+    <filter id="glow-green" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#10B981" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Blue Glow for Infrastructure -->
+    <filter id="glow-blue" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#3B82F6" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#EF4444" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10B981" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="8" />
+
+  <!-- Grid Pattern Overlay -->
+  <g opacity="0.03">
+    <path d="M 0,50 L 900,50 M 0,100 L 900,100 M 0,150 L 900,150 M 0,200 L 900,200 M 0,250 L 900,250 M 0,300 L 900,300 M 0,350 L 900,350 M 0,400 L 900,400 M 0,450 L 900,450 M 0,500 L 900,500 M 0,550 L 900,550 M 0,600 L 900,600" stroke="#FFFFFF" stroke-width="1" />
+    <path d="M 50,0 L 50,650 M 100,0 L 100,650 M 150,0 L 150,650 M 200,0 L 200,650 M 250,0 L 250,650 M 300,0 L 300,650 M 350,0 L 350,650 M 400,0 L 400,650 M 450,0 L 450,650 M 500,0 L 500,650 M 550,0 L 550,650 M 600,0 L 600,650 M 650,0 L 650,650 M 700,0 L 700,650 M 750,0 L 750,650 M 800,0 L 800,650 M 850,0 L 850,650" stroke="#FFFFFF" stroke-width="1" />
+  </g>
+
+  <!-- Title -->
+  <text x="30" y="45" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold">Proposed Hardened Architecture</text>
+  <text x="30" y="65" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="12">KAVACH Hardening Plan: Segmented VLANs, next-gen egress firewalls, proxy enforcement, and MFA jump hosts.</text>
+
+  <!-- Subgraph: Internet (External) -->
+  <rect x="30" y="95" width="840" height="110" rx="8" fill="#1E293B" fill-opacity="0.3" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="45" y="118" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" letter-spacing="1">INTERNET (UNTRUSTED)</text>
+
+  <!-- Blocked External C2 -->
+  <g transform="translate(120, 130)">
+    <rect width="240" height="55" rx="6" fill="#1E1E2F" stroke="#EF4444" stroke-width="1.5" />
+    <text x="20" y="25" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold">Blocked C2 Endpoints</text>
+    <text x="20" y="42" fill="#F87171" font-family="monospace" font-size="11">Threat Intelligence Blocks</text>
+  </g>
+
+  <!-- Approved External Updates -->
+  <g transform="translate(540, 130)">
+    <rect width="240" height="55" rx="6" fill="#1E293B" stroke="#10B981" stroke-width="1.5" />
+    <text x="20" y="25" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold">Approved External Services</text>
+    <text x="20" y="42" fill="#34D399" font-family="system-ui, -apple-system, sans-serif" font-size="11">Microsoft Updates / Patch Servers</text>
+  </g>
+
+  <!-- Subgraph: Perimeter Security Zone -->
+  <rect x="30" y="220" width="840" height="110" rx="8" fill="#1E293B" fill-opacity="0.2" stroke="#475569" stroke-width="1.5" />
+  <text x="45" y="242" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" letter-spacing="1">PERIMETER SECURITY ZONE</text>
+
+  <!-- NGFW Firewall -->
+  <g transform="translate(120, 255)">
+    <rect width="280" height="55" rx="6" fill="#1E1E2F" stroke="#F59E0B" stroke-width="2" />
+    <text x="20" y="25" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold">Next-Gen Firewall (NGFW)</text>
+    <text x="20" y="42" fill="#FBBF24" font-family="system-ui, -apple-system, sans-serif" font-size="11">Stops Direct Outbound Server Connections</text>
+  </g>
+
+  <!-- SWG / Proxy -->
+  <g transform="translate(500, 255)">
+    <rect width="280" height="55" rx="6" fill="#1E293B" stroke="#3B82F6" stroke-width="2" filter="url(#glow-blue)" />
+    <text x="20" y="25" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold">Secure Web Gateway (SWG)</text>
+    <text x="20" y="42" fill="#60A5FA" font-family="system-ui, -apple-system, sans-serif" font-size="11">Enforces TLS Decryption &amp; Domain filtering</text>
+  </g>
+
+  <!-- VLAN Segregation Main Container -->
+  <rect x="30" y="345" width="840" height="280" rx="8" fill="#1E293B" fill-opacity="0.1" stroke="#475569" stroke-width="1" />
+  <text x="45" y="365" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" letter-spacing="1">SEGMENTED INTERNAL NETWORKS (VLANs)</text>
+
+  <!-- Workstation VLAN -->
+  <g transform="translate(50, 390)">
+    <rect width="230" height="210" rx="6" fill="#1E1E2F" fill-opacity="0.6" stroke="#475569" stroke-width="1.5" />
+    <text x="15" y="25" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold">User Workstation VLAN</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="190" height="60" rx="4" fill="#0B0F19" stroke="#10B981" stroke-width="1.5" filter="url(#glow-green)" />
+      <text x="15" y="22" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold">User Workstation</text>
+      <text x="15" y="38" fill="#34D399" font-family="monospace" font-size="11">IP: 10.5.26.132</text>
+    </g>
+  </g>
+
+  <!-- Management VLAN -->
+  <g transform="translate(330, 390)">
+    <rect width="230" height="210" rx="6" fill="#1E1E2F" fill-opacity="0.6" stroke="#475569" stroke-width="1.5" />
+    <text x="15" y="25" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold">Management VLAN</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="190" height="60" rx="4" fill="#0B0F19" stroke="#3B82F6" stroke-width="1.5" filter="url(#glow-blue)" />
+      <text x="15" y="22" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold">Hardened Jump Host</text>
+      <text x="15" y="38" fill="#60A5FA" font-family="system-ui, -apple-system, sans-serif" font-size="11">MFA Enforced (RDP/SSH)</text>
+    </g>
+  </g>
+
+  <!-- Server VLAN -->
+  <g transform="translate(610, 390)">
+    <rect width="230" height="210" rx="6" fill="#1E1E2F" fill-opacity="0.6" stroke="#475569" stroke-width="1.5" />
+    <text x="15" y="25" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold">Restricted Server VLAN</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="190" height="60" rx="4" fill="#0B0F19" stroke="#3B82F6" stroke-width="1.5" />
+      <text x="15" y="22" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold">Domain Controller</text>
+      <text x="15" y="38" fill="#60A5FA" font-family="monospace" font-size="11">IP: 10.5.26.4</text>
+    </g>
+  </g>
+
+  <!-- Flows and Logic Intersections -->
+  
+  <!-- Blocked Workstation -> DC Direct SMB -->
+  <path d="M 280,470 L 610,470" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrow-red)" />
+  <rect x="410" y="458" width="80" height="24" rx="4" fill="#991B1B" stroke="#EF4444" stroke-width="1" />
+  <text x="450" y="474" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold">BLOCKED</text>
+  <text x="450" y="450" text-anchor="middle" fill="#EF4444" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold">Direct SMB Port 445</text>
+
+  <!-- Workstation -> Jump Host (Allowed with MFA) -->
+  <path d="M 240,490 L 330,490" fill="none" stroke="#10B981" stroke-width="1.5" marker-end="url(#arrow-green)" />
+  <text x="285" y="508" text-anchor="middle" fill="#34D399" font-family="system-ui, -apple-system, sans-serif" font-size="10">RDP/SSH + MFA</text>
+
+  <!-- Jump Host -> DC (Allowed and Monitored) -->
+  <path d="M 520,490 L 610,490" fill="none" stroke="#10B981" stroke-width="1.5" marker-end="url(#arrow-green)" />
+  <text x="565" y="508" text-anchor="middle" fill="#34D399" font-family="system-ui, -apple-system, sans-serif" font-size="10">Monitored SMB</text>
+
+  <!-- Workstation -> SWG (Egress Proxying) -->
+  <path d="M 145,390 L 145,340 Q 145,330 180,330 L 640,330 Q 640,315 640,310" fill="none" stroke="#10B981" stroke-width="1.5" marker-end="url(#arrow-green)" />
+  <text x="250" y="325" fill="#34D399" font-family="system-ui, -apple-system, sans-serif" font-size="10">HTTP/HTTPS Proxy Port 8080</text>
+
+  <!-- SWG -> NGFW -> Approved Updates -->
+  <path d="M 580,255 L 580,240 L 400,240" fill="none" stroke="#10B981" stroke-width="1.5" />
+  <path d="M 260,255 L 260,200" fill="none" stroke="#10B981" stroke-width="1.5" />
+  <path d="M 260,200 L 660,200 L 660,185" fill="none" stroke="#10B981" stroke-width="1.5" marker-end="url(#arrow-green)" />
+
+  <!-- Drop Outbound Malicious traffic -->
+  <path d="M 200,255 L 200,185" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrow-red)" />
+  
+  <!-- DC direct outbound internet block -->
+  <path d="M 725,390 L 725,275 M 725,275 L 400,275" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,4" />
+  <rect x="713" y="325" width="24" height="24" rx="12" fill="#EF4444" />
+  <text x="725" y="341" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold">X</text>
+  <text x="735" y="315" fill="#EF4444" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold">Direct Outbound Blocked</text>
+
+</svg>

@@ -1,1 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="10" y="20">Placeholder</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 550" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    
+    <!-- Red Glow for Threat/Vulnerability -->
+    <filter id="glow-red" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#EF4444" flood-opacity="0.5"/>
+    </filter>
+    
+    <!-- Blue Glow for Standard Infrastructure -->
+    <filter id="glow-blue" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#3B82F6" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Gray Glow -->
+    <filter id="glow-gray" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#64748B" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#EF4444" />
+    </marker>
+    <marker id="arrow-red-dash" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#EF4444" />
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#F97316" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="8" />
+
+  <!-- Grid Pattern Overlay for Tech Aesthetic -->
+  <g opacity="0.05">
+    <path d="M 0,50 L 850,50 M 0,100 L 850,100 M 0,150 L 850,150 M 0,200 L 850,200 M 0,250 L 850,250 M 0,300 L 850,300 M 0,350 L 850,350 M 0,400 L 850,400 M 0,450 L 850,450 M 0,500 L 850,500" stroke="#FFFFFF" stroke-width="1" />
+    <path d="M 50,0 L 50,550 M 100,0 L 100,550 M 150,0 L 150,550 M 200,0 L 200,550 M 250,0 L 250,550 M 300,0 L 300,550 M 350,0 L 350,550 M 400,0 L 400,550 M 450,0 L 450,550 M 500,0 L 500,550 M 550,0 L 550,550 M 600,0 L 600,550 M 650,0 L 650,550 M 700,0 L 700,550 M 750,0 L 750,550 M 800,0 L 800,550" stroke="#FFFFFF" stroke-width="1" />
+  </g>
+
+  <!-- Title -->
+  <text x="30" y="45" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold">Current Flat Architecture (Vulnerable)</text>
+  <text x="30" y="65" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="12">KAVACH Incident Response: Unrestricted network access and egress enabling malware exfiltration &amp; lateral movement.</text>
+
+  <!-- Subgraph: Internet (External) -->
+  <rect x="30" y="100" width="790" height="130" rx="8" fill="#1E293B" fill-opacity="0.4" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="45" y="125" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" letter-spacing="1">INTERNET (UNTRUSTED)</text>
+
+  <!-- C2 Exfil Server Box -->
+  <g transform="translate(100, 140)">
+    <rect width="260" height="70" rx="6" fill="#1E1E2F" stroke="#EF4444" stroke-width="2" filter="url(#glow-red)" />
+    <text x="20" y="30" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold">Attacker C2 &amp; Exfil Server</text>
+    <text x="20" y="50" fill="#F87171" font-family="monospace" font-size="12">37.228.70.134 / 36.95.27.243</text>
+  </g>
+
+  <!-- IP Discovery Box -->
+  <g transform="translate(480, 140)">
+    <rect width="260" height="70" rx="6" fill="#1E1E2F" stroke="#F97316" stroke-width="1.5" />
+    <text x="20" y="30" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold">Public IP Lookup Services</text>
+    <text x="20" y="50" fill="#FB923C" font-family="monospace" font-size="12">api.ipify.org / ipinfo.io</text>
+  </g>
+
+  <!-- Subgraph: Corporate Internal -->
+  <rect x="30" y="270" width="790" height="240" rx="8" fill="#1E293B" fill-opacity="0.2" stroke="#475569" stroke-width="1.5" />
+  <text x="45" y="295" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" letter-spacing="1">INTERNAL CORPORATE NETWORK</text>
+
+  <!-- Perimeter Gateway -->
+  <g transform="translate(325, 310)">
+    <rect width="200" height="50" rx="6" fill="#1E293B" stroke="#64748B" stroke-width="1.5" filter="url(#glow-gray)" />
+    <text x="100" y="24" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold">Perimeter Gateway / Router</text>
+    <text x="100" text-anchor="middle" y="40" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11">No Egress Filtering Enabled</text>
+  </g>
+
+  <!-- Infected Workstation Box -->
+  <g transform="translate(100, 410)">
+    <rect width="250" height="80" rx="6" fill="#1E1E2F" stroke="#EF4444" stroke-width="2" filter="url(#glow-red)" />
+    <text x="20" y="28" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold">Infected Workstation</text>
+    <text x="20" y="46" fill="#F87171" font-family="monospace" font-size="12">IP: 10.5.26.132</text>
+    <text x="20" y="64" fill="#EF4444" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">Trickbot Payload Executed</text>
+  </g>
+
+  <!-- Domain Controller Box -->
+  <g transform="translate(500, 410)">
+    <rect width="250" height="80" rx="6" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5" filter="url(#glow-blue)" />
+    <text x="20" y="28" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold">Active Directory Domain Controller</text>
+    <text x="20" y="46" fill="#60A5FA" font-family="monospace" font-size="12">IP: 10.5.26.4</text>
+    <text x="20" y="64" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="11">Target of Lateral Movement</text>
+  </g>
+
+  <!-- Flow Lines -->
+  <!-- Workstation lateral to DC -->
+  <path d="M 350,450 L 500,450" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-red-dash)" />
+  <text x="425" y="435" text-anchor="middle" fill="#EF4444" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold">SMB &amp; RPC (Port 445)</text>
+  <text x="425" y="468" text-anchor="middle" fill="#F87171" font-family="system-ui, -apple-system, sans-serif" font-size="10">Unrestricted East-West Flow</text>
+
+  <!-- Workstation to Gateway -->
+  <path d="M 225,410 L 225,380 L 325,335" fill="none" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+  <text x="205" y="385" fill="#EF4444" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold">HTTPS C2</text>
+
+  <!-- DC to Gateway -->
+  <path d="M 625,410 L 625,380 L 525,335" fill="none" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrow-red)" />
+  <text x="635" y="385" fill="#EF4444" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold">C2 Beaconing</text>
+
+  <!-- Gateway to Internet C2 -->
+  <path d="M 425,310 L 425,270 L 230,210" fill="none" stroke="#EF4444" stroke-width="2" marker-end="url(#arrow-red)" />
+  
+  <!-- Gateway to Internet IP Lookup -->
+  <path d="M 425,310 L 425,270 L 610,210" fill="none" stroke="#F97316" stroke-width="1.5" marker-end="url(#arrow-orange)" />
+
+</svg>
