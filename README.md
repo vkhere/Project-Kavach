@@ -1,4 +1,4 @@
-# Project KAVACH — Two-Surface Security Assessment
+# Project KAVACH - Two-Surface Security Assessment
 
 ## IIT Roorkee × Futurense Technologies · Confidential Engagement
 
