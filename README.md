@@ -15,7 +15,7 @@ Following the repository guidelines, the project is structured as follows:
 
 - **[`network/`](network/) (Workstream A: Network Forensics)**
   - [`triage-notes.md`](network/triage-notes.md): Overview protocol hierarchy, conversations, and time bursts.
-  - [`hypotheses.md`](network/hypotheses.md): Hypothesis deep dive for the `2021-05-26` capture (Cobalt Strike C2, exfiltration, lateral movement).
+  - [`hypothesis.md`](network/hypothesis.md): Hypothesis deep dive for the `2021-05-26` capture (Cobalt Strike C2, exfiltration, lateral movement).
   - [`iocs.csv`](network/iocs.csv): Structured machine-readable file containing verified IPs, domains, and hash IOCs.
   - [`report.md`](network/report.md): Network findings summary and proposed microsegmented network architecture.
 - **[`webapp/`](webapp/) (Workstream B: Web Application Assessment)**
