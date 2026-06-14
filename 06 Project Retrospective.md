@@ -2,7 +2,7 @@
 
 **IIT Roorkee × Futurense Technologies · Project KAVACH**
 
-Members: Megha Sharma, Vinay Kumar, Kedar Pavaskar
+*Members: Megha Sharma, Vinay Kumar, Kedar Pavaskar*
 ---
 
 ## 1. KEEP (What worked well)
