@@ -57,26 +57,22 @@ graph TD
 ### Attack Chain 2: Network-to-Web Pivot (Inside-Out)
 This threat chain details how an internal network compromise is leveraged to pivot and compromise the web-based customer portal.
 
-```
-[Internal Network Foothold via Phishing on Workstation 10.5.26.132]
-      │
-      ▼ (Step 1)
-[Active Cobalt Strike Beaconing to 37.228.70.134 (Network Frame 791)]
-      │
-      ▼ (Step 2)
-[Lateral Movement to Domain Controller 10.5.26.4 via SMB (Network Frame 10799)]
-      │
-      ▼ (Step 3)
-[Dumps AD Domain Hashes & Extracts LDAP Credentials (Network Frame 6818)]
-      │
-      ▼ (Step 4)
-[SSO Integration Abuse: Logs into Partner/Customer Portal as Admin using stolen AD creds]
-      │
-      ▼ (Step 5)
-[Exploits IDOR Vulnerability F-03 on /api/Addresss to dump client PII data]
-      │
-      ▼ (Step 6)
-[Complete Client PII Database Theft and Exfiltration]
+```mermaid
+graph TD
+    A["Internal Network Foothold via Phishing on Workstation 10.5.26.132"] -->|Step 1| B["Active Cobalt Strike Beaconing to 37.228.70.134 (Network Frame 791)"]
+    B -->|Step 2| C["Lateral Movement to Domain Controller 10.5.26.4 via SMB (Network Frame 10799)"]
+    C -->|Step 3| D["Dumps AD Domain Hashes & Extracts LDAP Credentials (Network Frame 6818)"]
+    D -->|Step 4| E["SSO Integration Abuse: Logs into Partner/Customer Portal as Admin using stolen AD creds"]
+    E -->|Step 5| F["Exploits IDOR Vulnerability F-03 on /api/Addresss to dump client PII data"]
+    F -->|Step 6| G["Complete Client PII Database Theft and Exfiltration"]
+
+    style A fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px;
+    style B fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px;
+    style C fill:#e1d5e7,stroke:#9673a6,stroke-width:2px;
+    style D fill:#e1d5e7,stroke:#9673a6,stroke-width:2px;
+    style E fill:#ffe6cc,stroke:#d79b00,stroke-width:2px;
+    style F fill:#ffe6cc,stroke:#d79b00,stroke-width:2px;
+    style G fill:#f8cecc,stroke:#b85450,stroke-width:2px;
 ```
 
 - **Correlation Signal**:
