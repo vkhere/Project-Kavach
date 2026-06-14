@@ -1,6 +1,6 @@
 # Project KAVACH — Two-Surface Security Assessment
 
-IIT Roorkee × Futurense Technologies · Confidential Engagement
+*IIT Roorkee × Futurense Technologies · Confidential Engagement*
 
 Team Members: Megha Sharma, Kedar Pavaska, Vinay Kumar
 
