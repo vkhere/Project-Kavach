@@ -2,6 +2,8 @@
 
 IIT Roorkee × Futurense Technologies · Confidential Engagement
 
+Group Members: Megha Sharma, Kedar Pavaskar, Vinay Kumar
+
 ---
 
 ## 1. Engagement Charter
