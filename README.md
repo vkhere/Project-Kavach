@@ -2,7 +2,7 @@
 
 *IIT Roorkee × Futurense Technologies · Confidential Engagement*
 
-Team Members: Megha Sharma, Kedar Pavaska, Vinay Kumar
+Team Members: Megha Sharma, Kedar Pavaskar, Vinay Kumar
 
 ---
 
